@@ -170,7 +170,7 @@
 //            echo "Connected successfully";
 //        }
 
-        $sql = "SELECT id, common_name, scientific_name, latitude, longitude, filepath, description, tour_bool FROM treeMapDB.treesTable";
+        $sql = "SELECT id, common_name, scientific_name, latitude, longitude, image, description, tour_bool FROM treeMapDB.treesTable";
         $result = $db->query($sql);
 
         if ($result->num_rows > 0) {
@@ -182,7 +182,7 @@
                     <th>Scienctific Name</th>
                     <th>Latitude</th>
                     <th>Longitude</th>
-                    <th>Filepath</th>
+                    <th>Image</th>
                     <th>Description</th>
                     <th>21 Tree Tour</th>
                     <th>Manage</th>
@@ -197,7 +197,7 @@
                             <td id="scientific_name"/>' . $row["scientific_name"] . ' </td>
                             <td id="latitude"/>' . $row["latitude"] . ' </td>
                             <td id="longitude"/>' . $row["longitude"] . ' </td>
-                            <td id="filepath"/>' . $row["filepath"] . ' </td>
+                            <td id="image"/>' . $row["image"] . ' </td>
                             <td id="description"/>' . $row["description"] . ' </td>
                             <td id="tour_bool"/>' . $row["tour_bool"] . ' </td>
                             <td><a href="edit.php?id=' . $row["id"] .'">Edit</a> | <a href="delete.php?id=' . $row["id"] .'" onClick="javascript:confirmationDelete('. $row["id"] .');return false;" class="delete">Delete</a></td>
